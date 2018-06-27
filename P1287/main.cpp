@@ -38,7 +38,6 @@ void input(ifstream &fin, ofstream &fout, int r) {
 
         if (l < edge[(s - 1) * p + (e - 1)].value) {
             edge[(s - 1) * p + (e - 1)].value = l;
-//            fout << "s=" << s << "e=" << e << "l=" << l << "num=" << (s - 1) * p + (e - 1) << endl;
         }
     }
 }
@@ -84,9 +83,7 @@ void kruskal(ofstream &fout) {
         if (start == end) {
             continue;
         }
-//        fout << "start=" << start << ", end=" << end << "length=" << edge[i].value << endl;
         if (findFather(start) != findFather(end)) {
-//            fout << "*****" << findFather(start) << "*****" << findFather(end) << endl;
             unionSet(start, end);
             answer += edge[i].value;
             setNum++;
@@ -120,24 +117,11 @@ int main() {
         init();
         input(fin, fout, r);
         sort(edge, edge + p * p, compare);
-//        for (int i = 0; i < p * p; i++) {
-//            fout << "start=" << edge[i].start << ", end=" << edge[i].end << ", value=" << edge[i].value << endl;
-//        }
-
         kruskal(fout);
-
-
         fin >> p >> r;
-//        fout << "p=" << p << "r=" << r << endl;
-//
-//        fout << "father" << endl;
-//        for (int i = 0; i < p; i++) {
-//            fout << "i=" << i << ", father=" << father[i] << endl;
     }
 
-
     fin.close();
-
     fout.close();
 
     return 0;
