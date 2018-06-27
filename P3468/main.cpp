@@ -13,6 +13,16 @@ long long regionLength(SegmentTree *tree) {
     return tree->right - tree->left + 1;
 }
 
+void updateChildren(SegmentTree *root) {
+    if (root->lson != NULL && root->rson != NULL && root->childrenExtra != 0) {
+        root->lson->total += root->childrenExtra * regionLength(root->lson);
+        root->lson->childrenExtra += root->childrenExtra;
+        root->rson->total += root->childrenExtra * regionLength(root->rson);
+        root->rson->childrenExtra += root->childrenExtra;
+        root->childrenExtra = 0;
+    }
+}
+
 SegmentTree *buildTree(vector<long long> &num, long long l, long long r) {
     if (l > r) {
         return NULL;
@@ -30,7 +40,6 @@ SegmentTree *buildTree(vector<long long> &num, long long l, long long r) {
     SegmentTree *root = new SegmentTree;
     root->left = l;
     root->right = r;
-    root->total = num[l];
     root->childrenExtra = 0;
     long long mid = (l + r) >> 1;
     root->lson = buildTree(num, l, mid);
@@ -48,13 +57,7 @@ void addRegion(SegmentTree *root, long long regionLeft, long long regionRight, l
         if (root->left < root->right)root->childrenExtra += addNum;
         return;
     }
-    if (root->lson != NULL && root->rson != NULL) {
-        root->lson->total += root->childrenExtra * regionLength(root->lson);
-        root->lson->childrenExtra += root->childrenExtra;
-        root->rson->total += root->childrenExtra * regionLength(root->rson);
-        root->rson->childrenExtra += root->childrenExtra;
-        root->childrenExtra = 0;
-    }
+    updateChildren(root);
     addRegion(root->lson, regionLeft, regionRight, addNum);
     addRegion(root->rson, regionLeft, regionRight, addNum);
     root->total = root->lson->total + root->rson->total;
@@ -68,13 +71,7 @@ void queryRegion(SegmentTree *root, long long regionLeft, long long regionRight,
         sum += root->total;
         return;
     }
-    if (root->lson != NULL && root->rson != NULL && root->childrenExtra != 0) {
-        root->lson->total += root->childrenExtra * regionLength(root->lson);
-        root->lson->childrenExtra += root->childrenExtra;
-        root->rson->total += root->childrenExtra * regionLength(root->rson);
-        root->rson->childrenExtra += root->childrenExtra;
-        root->childrenExtra = 0;
-    }
+    updateChildren(root);
     queryRegion(root->lson, regionLeft, regionRight, sum);
     queryRegion(root->rson, regionLeft, regionRight, sum);
 }
@@ -96,32 +93,40 @@ void printTree(ofstream &fout, SegmentTree *root) {
 }
 
 int main() {
+    ifstream fin("a.in");
+    ofstream fout("a.out");
 
     long long n, q, i, a, b, c;
     char type[2];
     SegmentTree *root;
 
-    scanf("%lld%lld", &n, &q);
+//    scanf("%lld%lld", &n, &q);
+    fin >> n >> q;
 
     vector<long long> num(n, 0);
 
     for (i = 0; i < n; i++) {
-        scanf("%lld", &num[i]);
+//        scanf("%lld", &num[i]);
+        fin >> num[i];
     }
 
     n--;
     root = buildTree(num, 0, n);
 
     for (i = 0; i < q; i++) {
-        scanf("%s", type);
+//        scanf("%s", type);
+        fin >> type;
         if (type[0] == 'C') {
-            scanf("%lld%lld%lld", &a, &b, &c);
+//            scanf("%lld%lld%lld", &a, &b, &c);
+            fin >> a >> b >> c;
             addRegion(root, a - 1, b - 1, c);
         } else {
-            scanf("%lld%lld", &a, &b);
+//            scanf("%lld%lld", &a, &b);
+            fin >> a >> b;
             long long sum = 0;
             queryRegion(root, a - 1, b - 1, sum);
-            printf("%lld\n", sum);
+//            printf("%lld\n", sum);
+            fout << sum << endl;
         }
     }
 
