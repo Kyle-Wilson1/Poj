@@ -1,8 +1,9 @@
 #include <iostream>
 #include <fstream>
-#include <queue>
 
 using namespace std;
+
+#define MAX_QUEUE 400
 
 const int dx[4] = {0, 0, 1, -1};
 const int dy[4] = {1, -1, 0, 0};
@@ -17,7 +18,6 @@ bool visited[20][20];
 int w, h, startX, startY;
 
 void input(ifstream &cin) {
-    char ch;
     for (int i = 0; i < h; ++i)
         for (int j = 0; j < w; ++j) {
             cin >> a[i][j];
@@ -32,18 +32,18 @@ void input(ifstream &cin) {
 void solve(ofstream &cout) {
 
     Point start = {};
-    queue<Point> q;
+    // 定义循环队列
+    Point q[MAX_QUEUE];
 
-    int answer = 0;
+    int head = 0, tail = 1, answer = 0;
     start.x = startX;
     start.y = startY;
-    q.push(start);
+    q[0] = start;
 
     visited[startX][startY] = false;
 
-    while (!q.empty()) {
-        Point now = q.front();
-        q.pop();
+    while (head != tail) {
+        Point now = q[head];
         Point to = {};
         answer++;
         for (int i = 0; i < 4; i++) {
@@ -52,9 +52,16 @@ void solve(ofstream &cout) {
             if (to.x >= 0 && to.x < h && to.y >= 0 && to.y < w && a[to.x][to.y] == '.'
                 && visited[to.x][to.y]) {
                 visited[to.x][to.y] = false;
-                q.push(to);
+                if (tail + 1 == head) {
+                    cout << "队列已满" << endl;
+                    return;
+                }
+                q[tail] = to;
+                tail = (tail + 1) % MAX_QUEUE;
             }
         }
+        head = (head + 1) % MAX_QUEUE;
+
     }
 
     cout << answer << endl;
