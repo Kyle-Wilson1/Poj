@@ -31,20 +31,17 @@ void input(ifstream &cin) {
 
 void solve(ofstream &cout) {
 
-    Point start = {};
     // 定义循环队列
-    Point q[MAX_QUEUE];
-
+    Point q[MAX_QUEUE], start = {};
     int head = 0, tail = 1, answer = 0;
+
     start.x = startX;
     start.y = startY;
     q[0] = start;
-
     visited[startX][startY] = false;
 
     while (head != tail) {
-        Point now = q[head];
-        Point to = {};
+        Point now = q[head], to = {};
         answer++;
         for (int i = 0; i < 4; i++) {
             to.x = now.x + dx[i];
@@ -61,9 +58,7 @@ void solve(ofstream &cout) {
             }
         }
         head = (head + 1) % MAX_QUEUE;
-
     }
-
     cout << answer << endl;
 }
 
