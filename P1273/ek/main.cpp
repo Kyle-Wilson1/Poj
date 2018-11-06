@@ -14,7 +14,6 @@ int bfs(int m) {
     int queue[MAX_NODE] = {0};
     bool visited[MAX_NODE] = {false};
     int flow[MAX_NODE];//flow[i]表示路径中到点i的最小可流通量
-
     memset(flow, 0xff, sizeof(flow));
 
     int head = 0, tail = 1, current;
@@ -48,9 +47,7 @@ void ek(int m) {
     int from, to;
 
     while (max_flow > 0) {
-
         answer += max_flow;
-
         // 增广
         to = m;
         while (pre[to] != 0) {
@@ -67,7 +64,6 @@ int main() {
 
     ifstream fin("a.in");
     ofstream fout("a.out");
-
     int from, to, flow;
 
     while (fin >> n >> m) {
@@ -83,6 +79,5 @@ int main() {
         ek(m);
         fout << answer << endl;
     }
-
     return 0;
 }
