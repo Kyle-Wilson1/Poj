@@ -7,7 +7,7 @@ bool match(char a, char b) {
     return a == '(' && b == ')' || a == '[' && b == ']';
 }
 
-string printStr(string source, int pos[][100], int i, int j) {
+string printStr(string &source, int pos[][100], int i, int j) {
 
     if (i > j)return "";
     if (i == j)
