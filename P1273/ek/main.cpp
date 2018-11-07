@@ -5,9 +5,7 @@
 using namespace std;
 
 #define MAX_NODE 201
-
 int map[MAX_NODE][MAX_NODE], pre[MAX_NODE];
-int n, m, answer = 0;
 
 int bfs(int source, int target, int m) {
 
@@ -21,7 +19,6 @@ int bfs(int source, int target, int m) {
     flow[source] = 0x7fffffff;
 
     while (head < tail) {
-
         // 取队首
         current = queue[head++];
         // 如果已经到达汇点，证明已经找到了路
@@ -40,12 +37,12 @@ int bfs(int source, int target, int m) {
     return 0;
 }
 
-void ek(int source, int target, int m) {
+int ek(int source, int target, int m) {
 
-    int max_flow = bfs(source, target, m);
-    int from, to;
+    int max_flow;
+    int from, to, answer = 0;
 
-    while (max_flow > 0) {
+    while ((max_flow = bfs(source, target, m)) > 0) {
         answer += max_flow;
         // 增广
         to = target;
@@ -55,28 +52,25 @@ void ek(int source, int target, int m) {
             map[to][from] += max_flow;
             to = from;
         }
-        max_flow = bfs(source, target, m);
     }
+    return answer;
 }
 
 int main() {
 
     ifstream fin("a.in");
     ofstream fout("a.out");
-    int from, to, flow;
+    int n, m, from, to, flow;
 
     while (fin >> n >> m) {
         // 数组初始化
         memset(map, 0, sizeof(map));
-        memset(pre, 0, sizeof(pre));
-        answer = 0;
 
         for (int i = 0; i < n; ++i) {
             fin >> from >> to >> flow;
             map[from][to] += flow;
         }
-        ek(1, m, m);
-        fout << answer << endl;
+        fout << ek(1, m, m) << endl;
     }
     return 0;
 }
