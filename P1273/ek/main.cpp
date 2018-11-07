@@ -9,25 +9,24 @@ using namespace std;
 int map[MAX_NODE][MAX_NODE], pre[MAX_NODE];
 int n, m, answer = 0;
 
-int bfs(int m) {
+int bfs(int source, int target, int m) {
 
     int queue[MAX_NODE] = {0};
     bool visited[MAX_NODE] = {false};
-    int flow[MAX_NODE];//flow[i]表示路径中到点i的最小可流通量
-    memset(flow, 0xff, sizeof(flow));
+    int flow[MAX_NODE] = {0};//flow[i]表示路径中到点i的最小可流通量
 
     int head = 0, tail = 1, current;
-    queue[head] = 1;
-    visited[1] = true;
-    flow[1] = 0x7fffffff;
+    queue[head] = source;
+    visited[source] = true;
+    flow[source] = 0x7fffffff;
 
     while (head < tail) {
 
         // 取队首
         current = queue[head++];
         // 如果已经到达汇点，证明已经找到了路
-        if (current == m) {
-            return flow[m];
+        if (current == target) {
+            return flow[target];
         }
         for (int i = 1; i <= m; ++i) {
             if (!visited[i] && map[current][i] > 0) {
@@ -41,22 +40,22 @@ int bfs(int m) {
     return 0;
 }
 
-void ek(int m) {
+void ek(int source, int target, int m) {
 
-    int max_flow = bfs(m);
+    int max_flow = bfs(source, target, m);
     int from, to;
 
     while (max_flow > 0) {
         answer += max_flow;
         // 增广
-        to = m;
+        to = target;
         while (pre[to] != 0) {
             from = pre[to];
             map[from][to] -= max_flow;
             map[to][from] += max_flow;
             to = from;
         }
-        max_flow = bfs(m);
+        max_flow = bfs(source, target, m);
     }
 }
 
@@ -76,7 +75,7 @@ int main() {
             fin >> from >> to >> flow;
             map[from][to] += flow;
         }
-        ek(m);
+        ek(1, m, m);
         fout << answer << endl;
     }
     return 0;
