@@ -4,69 +4,11 @@
 
 using namespace std;
 
-string multiply(const string &a, const string &b);
-
 string getZeroString(long n) {
 
     string st;
-    for (int i = 0; i < n; ++i)
-        st += '0';
-
+    for (int i = 0; i < n; ++i) st += '0';
     return st;
-}
-
-string exp(string st, int n) {
-
-    long dot = st.find('.');
-    long front = 0, end = 0;
-    //如果为小数，去掉末尾的0
-    if (dot >= 0) {
-        end = st.size() - 1;
-        while (end > 0) {
-            if (st[end] != '0')break;
-            --end;
-        }
-        end = st.size() - 1 - end;
-        st = st.substr(0, st.size() - end);
-
-    }
-
-    // 计算小数部分的数字长度
-    long decimalSize;
-    if (dot < 0) decimalSize = 0;
-    else decimalSize = (st.size() - 1 - dot) * n;
-
-    //去掉.
-    if (dot >= 0) {
-        st = st.substr(0, dot) + st.substr(dot + 1, st.size());
-    }
-
-    //去掉前面的0
-    while (front < st.size()) {
-        if (st[front] != '0' && st[front] != '.')break;
-        ++front;
-    }
-    string original = st.substr(front, st.size());
-    string answer = original;
-
-    if (original.empty()) { return "0"; }
-
-    for (int i = 0; i < n - 1; ++i) {
-        answer = multiply(answer, original);
-    }
-
-    //没有小数部分
-    if (dot < 0 || decimalSize <= 0)return answer;
-
-    //整数为0,  如0.000123
-    if (answer.size() <= decimalSize) {
-        return "." + getZeroString(decimalSize - answer.size()) + answer;
-    }
-
-    //正常小数位， 如123.1
-    answer.insert(answer.size() - decimalSize, ".");
-
-    return answer;
 }
 
 string multiply(const string &a, const string &b) {
@@ -88,7 +30,6 @@ string multiply(const string &a, const string &b) {
             ret[pos + 1] += temp / 10;
         }
 
-
     if (ret[l] <= 0) { --l; };
 
     string st;
@@ -100,21 +41,71 @@ string multiply(const string &a, const string &b) {
     return st;
 }
 
+string exp(string st, int n) {
+
+    unsigned long dot = st.find('.');
+    unsigned long front = 0, end = 0;
+    //如果为小数，去掉末尾的0和小数点
+    if (dot >= 0) {
+        end = st.size() - 1;
+        while (end > 0) {
+            if (st[end] != '0')break;
+            --end;
+        }
+        st.erase(end + 1, st.size() - end);
+        //去掉.
+        st.erase(dot, 1);
+    }
+
+    // 计算小数部分的数字长度
+    long decimalSize;
+    if (dot < 0) decimalSize = 0;
+    else decimalSize = (st.size() - dot) * n;
+
+    //去掉前面的0
+    while (front < st.size()) {
+        if (st[front] != '0' && st[front] != '.')break;
+        ++front;
+    }
+    string original = st.substr(front, st.size());
+    string answer = original;
+
+    //如果全是0，字符串为空，直接返回0
+    if (original.empty()) { return "0"; }
+
+    for (int i = 0; i < n - 1; ++i) {
+        answer = multiply(answer, original);
+    }
+
+    //没有小数部分
+    if (dot < 0 || decimalSize == 0) return answer;
+
+    //整数为0,  如0.000123
+    if (answer.size() <= decimalSize) {
+        return "." + getZeroString(decimalSize - answer.size()) + answer;
+    }
+
+    //正常小数位， 如123.1
+    answer.insert(answer.size() - decimalSize, ".");
+
+    return answer;
+}
+
 int main() {
 
-    ifstream fin("a.in");
-    ofstream fout("a.out");
+    ifstream cin("a.in");
+    ofstream cout("a.out");
 
     string r;
     int n;
 
-    while (fin >> r >> n) {
-        if (n == 0) fout << 1 << endl;
+    while (cin >> r >> n) {
+        if (n == 0) cout << 1 << endl;
         else
-            fout << exp(r, n) << endl;
+            cout << exp(r, n) << endl;
     }
 
-    fin.close();
-    fout.close();
+    cin.close();
+    cout.close();
     return 0;
 }
