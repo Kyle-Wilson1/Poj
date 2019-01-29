@@ -1,0 +1,3 @@
+/workspace/github/Poj/P1011/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/workspace/github/Poj/P1011/cmake-build-debug/CMakeFiles/edit_cache.dir
+/workspace/github/Poj/P1011/cmake-build-debug/CMakeFiles/P1011.dir

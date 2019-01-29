@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/workspace/github/Poj/P1011/main.cpp
+iostream
+-
+fstream
+-
+algorithm
+-
+cstdio
+-
+functional
+-
+
