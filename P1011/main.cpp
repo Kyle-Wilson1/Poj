@@ -68,7 +68,6 @@ int main() {
         //降序排序
         sort(a, a + n, greater<int>());
 
-//        for (int i = 0; i < n; ++i) cout << "i=" << i << ", a[i]" << a[i] << endl;
         for (int i = a[0]; i <= sum; ++i) {
             if (sum % i == 0 && search(0, 0, 0, i)) {
                 cout << i << endl;
