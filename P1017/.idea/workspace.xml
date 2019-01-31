@@ -2,7 +2,7 @@
 <project version="4">
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true" buildAllGenerated="true">
     <generated>
-      <config projectName="P1012" targetName="P1012" />
+      <config projectName="P1017" targetName="P1017" />
     </generated>
   </component>
   <component name="CMakeSettings">
@@ -11,7 +11,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="692a6e5c-b6ba-450c-8bf2-e993fdbed5a9" name="Default" comment="" />
+    <list default="true" id="6513d924-2b04-4f87-a2fd-cc5a49df2819" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -23,11 +23,21 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
   <component name="FileEditorManager">
     <leaf>
+      <file leaf-file-name="CMakeLists.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="main.cpp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="168">
-              <caret line="37" column="1" lean-forward="false" selection-start-line="37" selection-start-column="1" selection-end-line="39" selection-end-column="0" />
+            <state relative-caret-position="1980">
+              <caret line="132" column="5" lean-forward="false" selection-start-line="132" selection-start-column="5" selection-end-line="132" selection-end-column="5" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
               </folding>
@@ -38,8 +48,8 @@
       <file leaf-file-name="a.out" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cmake-build-debug/a.out">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="15">
+              <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -48,8 +58,8 @@
       <file leaf-file-name="a.in" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cmake-build-debug/a.in">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="3" column="2" lean-forward="false" selection-start-line="3" selection-start-column="2" selection-end-line="3" selection-end-column="2" />
+            <state relative-caret-position="165">
+              <caret line="11" column="11" lean-forward="false" selection-start-line="11" selection-start-column="11" selection-end-line="11" selection-end-column="11" />
               <folding />
             </state>
           </provider>
@@ -72,8 +82,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="265" />
-    <option name="y" value="85" />
+    <option name="x" value="126" />
+    <option name="y" value="44" />
     <option name="width" value="1127" />
     <option name="height" value="744" />
   </component>
@@ -96,12 +106,12 @@
         <subPane>
           <expand>
             <path>
-              <item name="P1012" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
-              <item name="P1012" type="462c0819:PsiDirectoryNode" />
+              <item name="P1017" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
+              <item name="P1017" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="P1012" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
-              <item name="P1012" type="462c0819:PsiDirectoryNode" />
+              <item name="P1017" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
+              <item name="P1017" type="462c0819:PsiDirectoryNode" />
               <item name="cmake-build-debug" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -126,16 +136,16 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.P1012">
-    <configuration name="Build All" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="P1012" RUN_TARGET_NAME="P1012" EXPLICIT_BUILD_TARGET_NAME="all">
+  <component name="RunManager" selected="Application.P1017">
+    <configuration name="Build All" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="P1017" RUN_TARGET_NAME="P1017" EXPLICIT_BUILD_TARGET_NAME="all">
       <envs />
     </configuration>
-    <configuration name="P1012" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="P1012" TARGET_NAME="P1012" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="P1012" RUN_TARGET_NAME="P1012">
+    <configuration name="P1017" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="P1017" TARGET_NAME="P1017" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="P1017" RUN_TARGET_NAME="P1017">
       <envs />
     </configuration>
     <list size="2">
       <item index="0" class="java.lang.String" itemvalue="Application.Build All" />
-      <item index="1" class="java.lang.String" itemvalue="Application.P1012" />
+      <item index="1" class="java.lang.String" itemvalue="Application.P1017" />
     </list>
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
@@ -146,20 +156,20 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="692a6e5c-b6ba-450c-8bf2-e993fdbed5a9" name="Default" comment="" />
-      <created>1548841076337</created>
+      <changelist id="6513d924-2b04-4f87-a2fd-cc5a49df2819" name="Default" comment="" />
+      <created>1548905413749</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1548841076337</updated>
-      <workItem from="1548841077676" duration="4982000" />
+      <updated>1548905413749</updated>
+      <workItem from="1548905415303" duration="4034000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4982000" />
+    <option name="totallyTimeSpent" value="4034000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="265" y="85" width="1127" height="744" extended-state="0" />
+    <frame x="126" y="44" width="1127" height="744" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24933451" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -190,20 +200,57 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/main.cpp</url>
-          <line>44</line>
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/main.cpp</url>
-          <line>14</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-      <option name="time" value="2" />
+      <option name="time" value="1" />
     </breakpoint-manager>
-    <watches-manager />
+    <watches-manager>
+      <configuration name="CMakeRunConfiguration">
+        <watch expression="a[0]" language="ObjectiveC" />
+        <watch expression="a[1]" language="ObjectiveC" />
+        <watch expression="a[2]" language="ObjectiveC" />
+        <watch expression="a[3]" language="ObjectiveC" />
+        <watch expression="a[4]" language="ObjectiveC" />
+        <watch expression="a[5]" language="ObjectiveC" />
+      </configuration>
+    </watches-manager>
+  </component>
+  <component name="debuggerHistoryManager">
+    <expressions id="watch">
+      <expression>
+        <expression-string>a[5]</expression-string>
+        <language-id>ObjectiveC</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>a[4]</expression-string>
+        <language-id>ObjectiveC</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>a[3]</expression-string>
+        <language-id>ObjectiveC</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>a[2]</expression-string>
+        <language-id>ObjectiveC</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>a[1]</expression-string>
+        <language-id>ObjectiveC</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>a[0]</expression-string>
+        <language-id>ObjectiveC</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>a</expression-string>
+        <language-id>ObjectiveC</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+    </expressions>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
@@ -214,26 +261,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cmake-build-debug/a.in">
+    <entry file="file://$PROJECT_DIR$/cmake-build-debug/a.out">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="2" lean-forward="false" selection-start-line="3" selection-start-column="2" selection-end-line="3" selection-end-column="2" />
+        <state relative-caret-position="15">
+          <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cmake-build-debug/a.out">
+    <entry file="file://$PROJECT_DIR$/cmake-build-debug/a.in">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="165">
+          <caret line="11" column="11" lean-forward="false" selection-start-line="11" selection-start-column="11" selection-end-line="11" selection-end-column="11" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/main.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="37" column="1" lean-forward="false" selection-start-line="37" selection-start-column="1" selection-end-line="39" selection-end-column="0" />
+        <state relative-caret-position="1980">
+          <caret line="132" column="5" lean-forward="false" selection-start-line="132" selection-start-column="5" selection-end-line="132" selection-end-column="5" />
           <folding>
             <element signature="e#0#19#0" expanded="true" />
           </folding>
