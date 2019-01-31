@@ -3,4 +3,4 @@ project(P1014)
 
 set(CMAKE_CXX_STANDARD 11)
 
-add_executable(P1014 main.cpp)
+add_executable(P1014 main.cpp main.cppbak)
