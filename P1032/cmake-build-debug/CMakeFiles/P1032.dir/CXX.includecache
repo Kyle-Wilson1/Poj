@@ -6,11 +6,9 @@
 
 #IncludeRegexTransform: 
 
-/workspace/github/Poj/P1001/main.cpp
+/Users/Shared/workspace/github/Poj/P1032/main.cpp
 iostream
 -
 fstream
--
-string
 -
 
