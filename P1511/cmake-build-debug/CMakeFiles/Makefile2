@@ -54,10 +54,10 @@ RM = /Applications/CLion.app/Contents/bin/cmake/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /workspace/github/Poj/P1511
+CMAKE_SOURCE_DIR = /Users/Shared/workspace/github/Poj/P1511
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /workspace/github/Poj/P1511/cmake-build-debug
+CMAKE_BINARY_DIR = /Users/Shared/workspace/github/Poj/P1511/cmake-build-debug
 
 #=============================================================================
 # Target rules for target CMakeFiles/P1511.dir
@@ -66,7 +66,7 @@ CMAKE_BINARY_DIR = /workspace/github/Poj/P1511/cmake-build-debug
 CMakeFiles/P1511.dir/all:
 	$(MAKE) -f CMakeFiles/P1511.dir/build.make CMakeFiles/P1511.dir/depend
 	$(MAKE) -f CMakeFiles/P1511.dir/build.make CMakeFiles/P1511.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/workspace/github/Poj/P1511/cmake-build-debug/CMakeFiles --progress-num=1,2 "Built target P1511"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/Shared/workspace/github/Poj/P1511/cmake-build-debug/CMakeFiles --progress-num=1,2 "Built target P1511"
 .PHONY : CMakeFiles/P1511.dir/all
 
 # Include target in all.
@@ -76,9 +76,9 @@ all: CMakeFiles/P1511.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/P1511.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /workspace/github/Poj/P1511/cmake-build-debug/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/Shared/workspace/github/Poj/P1511/cmake-build-debug/CMakeFiles 2
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/P1511.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /workspace/github/Poj/P1511/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/Shared/workspace/github/Poj/P1511/cmake-build-debug/CMakeFiles 0
 .PHONY : CMakeFiles/P1511.dir/rule
 
 # Convenience name for target.
